@@ -11,7 +11,7 @@ class Sort
 		void printArray(std::vector<int>&);
 
 		void bubbleSort(std::vector<int>&);
-		void quickSort(std::vector<int>&);
+		void quickSort(std::vector<int>&, int, int);
 };
 
 void Sort::printArray(std::vector<int>& array)

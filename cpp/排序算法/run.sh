@@ -7,4 +7,4 @@ then
 fi
 
 export CPLUS_INCLUDE_PATH=$PWD
-g++ $1 && ./a.out
+g++ $1 -g && ./a.out
