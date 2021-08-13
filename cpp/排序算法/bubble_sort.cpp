@@ -2,53 +2,35 @@
 // 基本思路-相邻对比，大者往右，第一次迭代结束，最后一个值应为数组最大值；数组长度-1，下一轮迭代
 // 创建时间-2021/08/01
 
-# include <iostream>
-# include <vector>
+# include <sort.h>
 
 
-void printArray(std::vector<int>& array)
+void Sort::bubbleSort(std::vector<int>& array)
 {
-	std::cout << "Array = ";
-	for(int i = 0; i < array.size(); i++)
-		std::cout << array[i] << '\t';
-	std::cout << std::endl;
-}
+	int n = array.size();
 
-void swap(std::vector<int> &array, unsigned int i, unsigned int j)
-{
-	int temp = array[j];
-	array[j] = array[i];
-	array[i] = temp;
-}
-
-void bubbleSort(std::vector<int> &array)
-{
-	int iter = array.size() - 1;
-	for(int i=0; i < iter; i++)
+	while(n > 1)
 	{
-		if(array[i] > array[i + 1])
-			swap(array, i, i+1);
+		for(int i = 0; i < n-1; i++)
+		{
+			if(array[i] > array[i+1])
+				swap(array, i, i+1);
+		}
+		n--;
 	}
 }
+
 
 int main(void)
 {
-	std::vector<int> array = {1, 5, 7, 9, 2, 8, 4, 6, -4, 3, 11};
-	std::vector<int> res = {};
-	printArray(array);
+	std::vector<int> array = {1, 5, 1, 9, 2, 8, 2, 6, 3, 3, 11};
 
-	while(array.size())
-	{
-		bubbleSort(array);
-		res.insert(res.begin(), array[array.size()-1]);
-		array.pop_back();
-	}
-	printArray(res);
+	Sort S;
+	S.printArray(array);
+
+	S.bubbleSort(array);
+	S.printArray(array);
 
 	return 0;
 }
 
-
-// 优化方向
-// 1. bubbleSort(std::vector<int> &array, int start, int end)
-// 2. 递归思路
