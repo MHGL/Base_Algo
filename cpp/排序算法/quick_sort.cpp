@@ -36,7 +36,7 @@ void Sort::quickSort(std::vector<int> &array, int begin, int end)
 int main(void)
 {
 	Sort S;
-	std::vector<int> array = {1, 5, 1, 9, 2, 8, 2, 6, 3, 3, 11};
+	std::vector<int> array = {3, 5, 1, 9, 2, 8, 2, 6, 1, 2, 11};
 	S.printArray(array);
 
 	int n = array.size() - 1;
